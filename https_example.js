@@ -8,8 +8,9 @@ var options = {
 };
 
 //called by https when the request is made.
-var callback = () => {
+var callback = (res) => {
   console.log('Response: Handler callback!');
+  console.log('Response: ', res);
 }
 
 //showing asynchronous behaviour:
