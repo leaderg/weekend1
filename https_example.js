@@ -10,7 +10,14 @@ var options = {
 //called by https when the request is made.
 var callback = (res) => {
   console.log('Response: Handler callback!');
-  console.log('Response: ', res);
+  //IncomingMessage res
+  // console.log('Response: ', res);
+
+  //read the data
+  res.on('data', (chunk) => {
+    console.log('[-- Chunk of length: ' + chunk.length + ' --]');
+    console.log(chunk.toString());
+  });
 }
 
 //showing asynchronous behaviour:
